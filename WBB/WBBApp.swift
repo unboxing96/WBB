@@ -8,10 +8,15 @@
 import SwiftUI
 
 @main
-struct WBBApp: App {
+struct YourAppName: App {
+    @StateObject var viewRouter = ViewRouter()
+    @StateObject var gameManager = GameManager()
+
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(viewRouter)
+                .environmentObject(gameManager)
         }
     }
 }
